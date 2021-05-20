@@ -34,7 +34,7 @@ import apkid
 
 here = path.abspath(path.dirname(__file__))
 
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+with open(path.join(here, "README.rst"), encoding="utf-8") as f:
     long_description = f.read()
 
 
@@ -47,25 +47,25 @@ def package_files(directory):
 
 
 install_requires = [
-    'yara-python-dex>=1.0.0',
+    "yara-python @ git+https://git@github.com/harini9804/yara-python@1ee63a7",
 ]
 
 dev_requires = [
-    'mypy',
-    'pypandoc',
-    'twine',
+    "mypy",
+    "pypandoc",
+    "twine",
 ]
 
 test_requires = [
-    'delayed-assert',
-    'factory_boy',
-    'mock',
-    'pytest',
-    'pytest-cov',
-    'pytest-factoryboy',
-    'pytest-flask',
-    'pytest-runner',
-    'tox',
+    "delayed-assert",
+    "factory_boy",
+    "mock",
+    "pytest",
+    "pytest-cov",
+    "pytest-factoryboy",
+    "pytest-flask",
+    "pytest-runner",
+    "tox",
 ]
 
 setup(
@@ -73,37 +73,28 @@ setup(
     version=apkid.__version__,
     description="Android Package Identifier",
     long_description=long_description,
-    url='https://github.com/rednaga/APKiD',
+    url="https://github.com/rednaga/APKiD",
     author=apkid.__author__,
-    author_email='rednaga@protonmail.com',
+    author_email="rednaga@protonmail.com",
     license=apkid.__license__,
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Environment :: Console',
-        'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'License :: Other/Proprietary License',
-        'Natural Language :: English',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Topic :: Security',
-        'Topic :: Utilities',
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Console",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "License :: Other/Proprietary License",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Topic :: Security",
+        "Topic :: Utilities",
     ],
-    keywords='android analysis reversing malware apk dex dalvik',
-    packages=find_packages(exclude=['docs', 'tests']),
-    package_data={
-        'rules': package_files('apkid/rules/'),
-    },
+    keywords="android analysis reversing malware apk dex dalvik",
+    packages=find_packages(exclude=["docs", "tests"]),
+    package_data={"rules": package_files("apkid/rules/"),},
     include_package_data=True,
     install_requires=install_requires,
-    extras_require={
-        'dev': dev_requires,
-        'test': test_requires,
-    },
+    extras_require={"dev": dev_requires, "test": test_requires,},
     zip_safe=False,
-    entry_points={
-        'console_scripts': [
-            'apkid=apkid.main:main',
-        ],
-    },
+    entry_points={"console_scripts": ["apkid=apkid.main:main",],},
 )
