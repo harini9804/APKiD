@@ -47,7 +47,7 @@ def package_files(directory):
 
 
 install_requires = [
-    "yara-python @ git+https://git@github.com/harini9804/yara-python@1ee63a7",
+    "yara-python>=4.0.0",
 ]
 
 dev_requires = [
